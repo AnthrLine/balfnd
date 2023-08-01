@@ -26,21 +26,27 @@ def exec():
 	# Changing the dummy text
 	with open(r"workfile.html", 'w') as fp:
 		for number, line in enumerate(podium):
-			if number not in [2, 9, 12, 17, 26, 37, 50]: #Lines that the code will delete
+			if number not in [2, 9, 12, 16, 19, 28, 57, 60, 63, 66, 69, 72, 75]: #Lines that the code will delete
 				fp.write(line)
 
 	# Edit with a loop
 	i = 0
-	while i <=1:
+	while i <=2:
 		with open("workfile.html", "r") as readingfile:
 			rcontents = readingfile.readlines()
 		rcontents.insert(2, str(f'"{i+1}"'))
-		rcontents.insert(9, str(nonetodash.nonetodash(sheetoperator.tot[i+1][1])))
+		rcontents.insert(9, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][1])))
 		rcontents.insert(12, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][2])))
-		rcontents.insert(17, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][3])))
-		rcontents.insert(26, f'"t{i+1}"')
-		rcontents.insert(37, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][3])))
-		rcontents.insert(50, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][4])))
+		rcontents.insert(16, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][8])))
+		rcontents.insert(19, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][11])))
+		rcontents.insert(28, f'"t{i+1}"')
+		rcontents.insert(57, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][3])))
+		rcontents.insert(60, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][4])))
+		rcontents.insert(63, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][5])))
+		rcontents.insert(66, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][6])))
+		rcontents.insert(69, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][7])))
+		rcontents.insert(72, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][10])))
+		rcontents.insert(75, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][9])))
 		write(rcontents)
 		i += 1
 	# PODOIUM CONTROL
@@ -52,7 +58,7 @@ def exec():
 	# Changing the dummy text
 	with open(r"workfile.html", 'w') as fp:
 		for number, line in enumerate(list):
-			if number not in [1, 7, 11, 15, 19, 23, 29, 53, 56, 59, 62, 65, 68, 71]: #Lines that the code will delete
+			if number not in [2, 5, 9, 12, 16, 19, 28, 57, 60, 63, 66, 69, 72, 75]: #Lines that the code will delete
 				fp.write(line)
 
 	# Edit with a loop
@@ -60,20 +66,20 @@ def exec():
 	while i <= sheetoperator.individualsnf[0]-1:
 		with open("workfile.html", "r") as readingfile:
 			rcontents = readingfile.readlines()
-		rcontents.insert(1, str(f'"{i+1}"'))
-		rcontents.insert(7, str(f'{i+1}'))
-		rcontents.insert(11, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][1])))
-		rcontents.insert(15, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][2])))
-		rcontents.insert(19, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][8])))
-		rcontents.insert(23, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][11])))
-		rcontents.insert(29, f'"t{i+1}"')
-		rcontents.insert(53, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][3])))
-		rcontents.insert(56, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][4])))
-		rcontents.insert(59, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][5])))
-		rcontents.insert(62, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][6])))
-		rcontents.insert(65, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][7])))
-		rcontents.insert(68, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][10])))
-		rcontents.insert(71, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][9])))
+		rcontents.insert(2, str(f'"{i+1}"'))
+		rcontents.insert(5, str(f'{i+1}'))
+		rcontents.insert(9, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][1])))
+		rcontents.insert(12, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][2])))
+		rcontents.insert(16, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][8])))
+		rcontents.insert(19, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][11])))
+		rcontents.insert(28, f'"t{i+1}"')
+		rcontents.insert(57, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][3])))
+		rcontents.insert(60, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][4])))
+		rcontents.insert(63, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][5])))
+		rcontents.insert(66, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][6])))
+		rcontents.insert(69, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][7])))
+		rcontents.insert(72, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][10])))
+		rcontents.insert(75, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][9])))
 		write(rcontents)
 		print (i)
 		i += 1

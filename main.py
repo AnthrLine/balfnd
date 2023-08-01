@@ -2,7 +2,6 @@ from flask import Flask, render_template, send_file, request, make_response
 import requests
 import time
 import uuid
-import schedule
 import os
 from threading import Thread
 from modules import sheetoperator, mainhtmloperator, eqfsheetoperator, eqnfsheetoperator, indfsheetoperator, indnfsheetoperator, indpetsheetoperator, indgrsheetoperator, adgenerator, schedulef
@@ -12,7 +11,6 @@ app = Flask('app')
 		
 @app.route('/')
 def main():
-	schedule.run_pending()
 	return render_template("index.html")
 
 @app.route('/sw.js')
@@ -21,7 +19,6 @@ def sw():
 
 @app.route('/index')
 def index():
-	schedule.run_pending()
 	return render_template("index.html")
 
 #@app.route('/testeqf')
@@ -88,7 +85,7 @@ def loginform():
 	
 @app.route('/login', methods = ['POST', 'GET'])
 def login():
-	password = ''
+	password = 'TESTPSWD'
 
 	pwd = str(request.form.get('pwd'))
 
@@ -119,9 +116,13 @@ def file():
 	else:
 		return("You don't have permission to do that")
 
+@app.route('/nou')
+def nou():
+	return render_template("eqnfnou.html")
+
 if __name__ == '__main__':
-	t = Thread(target=schedulef.run)
-	t.start()
+	# t = Thread(target=schedulef.run)
+	# t.start()
 	app.config['UPLOAD_FOLDER'] = '/'
 	app.config['TEMPLATES_AUTO_RELOAD'] = True
 	app.run(host='0.0.0.0', port=5000)

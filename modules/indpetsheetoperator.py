@@ -26,7 +26,7 @@ def exec(individualsnf=sheetoperator.individualsnf, individualsf=sheetoperator.i
 	# Changing the dummy text
 	with open(r"workfile.html", 'w') as fp:
 		for number, line in enumerate(podium):
-			if number not in [2, 9, 12, 17, 26, 37, 50]: #Lines that the code will delete
+			if number not in [2, 9, 12, 16, 19, 28, 57, 60, 63, 66, 69, 72, 75]: #Lines that the code will delete
 				fp.write(line)
 
 	# Edit with a loop
@@ -38,10 +38,16 @@ def exec(individualsnf=sheetoperator.individualsnf, individualsf=sheetoperator.i
 		rcontents.insert(2, str(f'"{i+1}"'))
 		rcontents.insert(9, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][1])))
 		rcontents.insert(12, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][2])))
-		rcontents.insert(17, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][3])))
-		rcontents.insert(26, f'"t{i+1}"')
-		rcontents.insert(37, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][3])))
-		rcontents.insert(50, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][4])))
+		rcontents.insert(16, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][8])))
+		rcontents.insert(19, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][11])))
+		rcontents.insert(28, f'"t{i+1}"')
+		rcontents.insert(57, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][3])))
+		rcontents.insert(60, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][4])))
+		rcontents.insert(63, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][5])))
+		rcontents.insert(66, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][6])))
+		rcontents.insert(69, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][7])))
+		rcontents.insert(72, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][10])))
+		rcontents.insert(75, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][9])))
 		write(rcontents)
 		i += 1
 	# PODOIUM CONTROL
@@ -53,7 +59,7 @@ def exec(individualsnf=sheetoperator.individualsnf, individualsf=sheetoperator.i
 	# Changing the dummy text
 	with open(r"workfile.html", 'w') as fp:
 		for number, line in enumerate(list):
-			if number not in [2, 9, 12, 18, 27, 38, 51]: #Lines that the code will delete
+			if number not in [2, 5, 9, 12, 16, 19, 28, 57, 60, 63, 66, 69, 72, 75]: #Lines that the code will delete
 				fp.write(line)
 
 	# Edit with a loop
@@ -63,12 +69,19 @@ def exec(individualsnf=sheetoperator.individualsnf, individualsf=sheetoperator.i
 		with open("workfile.html", "r") as readingfile:
 			rcontents = readingfile.readlines()
 		rcontents.insert(2, str(f'"{i+1}"'))
+		rcontents.insert(5, str(f'{i+1}'))
 		rcontents.insert(9, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][1])))
 		rcontents.insert(12, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][2])))
-		rcontents.insert(18, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][3])))
-		rcontents.insert(27, f'"t{i+1}"')
-		rcontents.insert(38, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][3])))
-		rcontents.insert(51, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][4])))
+		rcontents.insert(16, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][8])))
+		rcontents.insert(19, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][11])))
+		rcontents.insert(28, f'"t{i+1}"')
+		rcontents.insert(57, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][3])))
+		rcontents.insert(60, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][4])))
+		rcontents.insert(63, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][5])))
+		rcontents.insert(66, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][6])))
+		rcontents.insert(69, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][7])))
+		rcontents.insert(72, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][10])))
+		rcontents.insert(75, str(nonetodash.nonetodash(sheetoperator.tot[indpetindex][9])))
 		write(rcontents)
 		print (i)
 		i += 1

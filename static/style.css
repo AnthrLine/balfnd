@@ -60,6 +60,24 @@ h2{
     color: black;
 }
 
+.colapsable{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.intable{
+    margin: 0px 5px 0px 5px;
+    font-size: 5vw;
+    width: 16vw;
+}
+
 .wt{
     color: white;
 }
