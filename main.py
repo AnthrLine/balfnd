@@ -6,7 +6,6 @@ import os
 from threading import Thread
 from modules import sheetoperator, mainhtmloperator, eqfsheetoperator, eqnfsheetoperator, indfsheetoperator, indnfsheetoperator, indpetsheetoperator, indgrsheetoperator, adgenerator, schedulef
 
-
 app = Flask('app')
 		
 @app.route('/')
@@ -19,6 +18,7 @@ def sw():
 
 @app.route('/index')
 def index():
+	ads = adgenerator.generate()
 	return render_template("index.html")
 
 #@app.route('/testeqf')
@@ -33,27 +33,33 @@ def patrocinadors():
 
 @app.route('/equipsfederats')
 def equipsfederats():
-	return render_template('eqf.html')
+	ads = adgenerator.generate()
+	return render_template('eqf.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
 @app.route('/equipsnofederats')
 def equipsnofederats():
-	return render_template('eqnf.html')
+	ads = adgenerator.generate()
+	return render_template('eqnf.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
 @app.route('/individualnofederats')
 def individualnofederats():
-	return render_template('indnf.html')
+	ads = adgenerator.generate()
+	return render_template('indnf.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
 @app.route('/individualfederats')
 def individualfederats():
-	return render_template('indf.html')
+	ads = adgenerator.generate()
+	return render_template('indf.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
 @app.route('/individual20102014')
 def individual20102014():
-	return render_template('indpet.html')
+	ads = adgenerator.generate()
+	return render_template('indpet.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
 @app.route('/individual20062009')
 def individual20062009():
-	return render_template('indgr.html')
+	ads = adgenerator.generate()
+	return render_template('indgr.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
 #@app.route('/csvexec')
 def csvexec():

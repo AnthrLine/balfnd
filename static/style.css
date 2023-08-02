@@ -4,6 +4,49 @@ body{
     background-color: #0F0E0E;
 }
 
+.adcontainer{
+    transform: translateY(-2.59vh) translateX(-8px);
+    display: flex;
+    flex-direction: column;
+    background-color: #0F0E0E;
+    position: fixed;
+    z-index: 99;
+    width: 100vw;
+    height: 120vh;
+    margin: 0px 0px 0px 0px;
+
+    animation-name: disappear;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 6s;
+}
+
+.adbkg{
+    display: flex;
+    flex-direction: column;
+    background-color: #0F0E0E;
+    position: fixed;
+    z-index: 98;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px 0px 0px 0px;
+
+    animation-name: disappear;
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 6.7s;
+}
+
+.ad{
+    margin: 0px 0px 0px 0px;
+}
+
+img{
+    padding-top: 5px;
+}
+
 p{
     font-family: Lato;
     font-size: 3vw;
@@ -182,4 +225,10 @@ footer {
     align-items: center;
     text-align: center;
     justify-content: center;
+}
+
+@keyframes disappear {
+    0%{opacity: 100%;}
+    99%{z-index: 99;}
+    100%{opacity: 0%; z-index: -2;}
 }
