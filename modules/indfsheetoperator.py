@@ -35,6 +35,11 @@ def exec(individualsnf=sheetoperator.individualsnf, individualsf=sheetoperator.i
 		indfindex = int(individualsnf[0] + i+1)
 		with open("workfile.html", "r") as readingfile:
 			rcontents = readingfile.readlines()
+		if sheetoperator.tot[indfindex][8] == '':
+			sheetoperator.tot[indfindex][8] = ''
+		else:
+			sheetoperator.tot[indfindex][8] = format(float(sheetoperator.tot[indfindex][8]), '.2f')
+
 		rcontents.insert(2, str(f'"{i+1}"'))
 		rcontents.insert(9, str(nonetodash.nonetodash(sheetoperator.tot[indfindex][1])))
 		rcontents.insert(12, str(nonetodash.nonetodash(sheetoperator.tot[indfindex][2])))
@@ -68,6 +73,11 @@ def exec(individualsnf=sheetoperator.individualsnf, individualsf=sheetoperator.i
 		indfindex = int(individualsnf[0] + i+1)
 		with open("workfile.html", "r") as readingfile:
 			rcontents = readingfile.readlines()
+		if sheetoperator.tot[indfindex][8] == '':
+			sheetoperator.tot[indfindex][8] = ''
+		else:
+			sheetoperator.tot[indfindex][8] = format(float(sheetoperator.tot[indfindex][8]), '.2f')
+			
 		rcontents.insert(2, str(f'"{i+1}"'))
 		rcontents.insert(5, str(f'{i+1}'))
 		rcontents.insert(9, str(nonetodash.nonetodash(sheetoperator.tot[indfindex][1])))

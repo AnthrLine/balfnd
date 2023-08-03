@@ -34,6 +34,11 @@ def exec():
 	while i <=2:
 		with open("workfile.html", "r") as readingfile:
 			rcontents = readingfile.readlines()
+		if sheetoperator.tot[i + 1][8] == '':
+			sheetoperator.tot[i + 1][8] = ''
+		else:
+			sheetoperator.tot[i + 1][8] = format(float(sheetoperator.tot[i + 1][8]), '.2f')
+
 		rcontents.insert(2, str(f'"{i+1}"'))
 		rcontents.insert(9, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][1])))
 		rcontents.insert(12, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][2])))
@@ -66,6 +71,11 @@ def exec():
 	while i <= sheetoperator.individualsnf[0]-1:
 		with open("workfile.html", "r") as readingfile:
 			rcontents = readingfile.readlines()
+		if sheetoperator.tot[i + 1][8] == '':
+			sheetoperator.tot[i + 1][8] = ''
+		else:
+			sheetoperator.tot[i + 1][8] = format(float(sheetoperator.tot[i + 1][8]), '.2f')
+
 		rcontents.insert(2, str(f'"{i+1}"'))
 		rcontents.insert(5, str(f'{i+1}'))
 		rcontents.insert(9, str(nonetodash.nonetodash(sheetoperator.tot[i + 1][1])))
