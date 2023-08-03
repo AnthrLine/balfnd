@@ -178,6 +178,10 @@ h2{
     font-size: medium;
 }
 
+.total{
+    font-size: 4vw;
+}
+
 .hidden{
     display:none;
 }
