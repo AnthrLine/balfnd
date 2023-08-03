@@ -2,6 +2,7 @@
 
 body{
     background-color: #0F0E0E;
+    margin-top: 0px;
 }
 
 .adcontainer{
@@ -14,6 +15,7 @@ body{
     width: 100vw;
     height: 120vh;
     margin: 0px 0px 0px 0px;
+    align-items: center;
 
     animation-name: disappear;
     animation-timing-function: ease;
@@ -41,6 +43,8 @@ body{
 
 .ad{
     margin: 0px 0px 0px 0px;
+    width: 43vh; /* AIXÒ ÉS PER ELS PUTOS IPHONES ESTIC PLORANT */
+    height: 43vh; /*I AIXÒ TAMBÉ ME CAGO EN LA PUTA */
 }
 
 img{
