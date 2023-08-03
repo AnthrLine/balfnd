@@ -7,9 +7,13 @@ from threading import Thread
 from modules import sheetoperator, mainhtmloperator, eqfsheetoperator, eqnfsheetoperator, indfsheetoperator, indnfsheetoperator, indpetsheetoperator, indgrsheetoperator, adgenerator, schedulef
 
 app = Flask('app')
-		
+
+curtainon = False
+
 @app.route('/')
 def main():
+	if curtainon:
+		return render_template('curtain.html')
 	return render_template("index.html")
 
 @app.route('/sw.js')
@@ -18,8 +22,12 @@ def sw():
 
 @app.route('/index')
 def index():
-	ads = adgenerator.generate()
-	return render_template("index.html")
+	if curtainon == True:
+		print("ISTRUE")
+		return render_template("curtain.html")
+	else:
+		ads = adgenerator.generate()
+		return render_template("index.html")
 
 #@app.route('/testeqf')
 def testeqf():
@@ -33,31 +41,43 @@ def patrocinadors():
 
 @app.route('/equipsfederats')
 def equipsfederats():
+	if curtainon:
+		return render_template("curtain.html")
 	ads = adgenerator.generate()
 	return render_template('eqf.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
 @app.route('/equipsnofederats')
 def equipsnofederats():
+	if curtainon:
+		return render_template("curtain.html")
 	ads = adgenerator.generate()
 	return render_template('eqnf.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
-@app.route('/individualnofederats')
+@app.route('/individualnofedeprint(curtain)rats')
 def individualnofederats():
+	if curtainon:
+		return render_template("curtain.html")
 	ads = adgenerator.generate()
 	return render_template('indnf.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
 @app.route('/individualfederats')
 def individualfederats():
+	if curtainon:
+		return render_template("curtain.html")
 	ads = adgenerator.generate()
 	return render_template('indf.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
 @app.route('/individual20102014')
 def individual20102014():
+	if curtainon:
+		return render_template("curtain.html")
 	ads = adgenerator.generate()
 	return render_template('indpet.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
 @app.route('/individual20062009')
 def individual20062009():
+	if curtainon:
+		return render_template("curtain.html")
 	ads = adgenerator.generate()
 	return render_template('indgr.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
@@ -107,7 +127,22 @@ def login():
 	else:
 		return loginform()
 		
+@app.route('/cortina')
+def cortina():
+	return render_template('curtainform.html')
 
+@app.route('/curtain')
+def curtain():
+	global curtainon
+	if request.cookies.get('uuid') == str(getuuid()):
+		if curtainon == True:
+			curtainon = False
+		else:
+			curtainon = True
+
+	return admin()
+
+	
 @app.route('/file', methods = ['POST', 'GET'])
 def file():
 	if os.path.exists('Web.xlsx'):
