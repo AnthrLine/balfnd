@@ -53,7 +53,7 @@ def equipsnofederats():
 	ads = adgenerator.generate()
 	return render_template('eqnf.html', ad1=f"../static/ads/ad{ads[0]}.png", ad2=f"../static/ads/ad{ads[1]}.png")
 
-@app.route('/individualnofedeprint(curtain)rats')
+@app.route('/individualnofederats')
 def individualnofederats():
 	if curtainon:
 		return render_template("curtain.html")
