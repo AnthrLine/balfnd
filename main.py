@@ -3,6 +3,7 @@ import requests
 import time
 import uuid
 import os
+import updater
 from threading import Thread
 from modules import sheetoperator, mainhtmloperator, eqfsheetoperator, eqnfsheetoperator, indfsheetoperator, indnfsheetoperator, indpetsheetoperator, indgrsheetoperator, adgenerator, schedulef
 
@@ -111,9 +112,10 @@ def loginform():
 	
 @app.route('/login', methods = ['POST', 'GET'])
 def login():
-	password = 'TESTPSWD'
+	password = '8767956149179299049'
 
 	pwd = str(request.form.get('pwd'))
+	print(hash(pwd))
 
 	if str(password) == str(pwd):
 		uuidv = str(uuid.uuid4())
@@ -152,7 +154,8 @@ def file():
 			f = request.files['xlsx']
 			f.save(f.filename)
 			csvexec()
-			return admin()	
+			updater.completeupdate()
+			return admin()
 
 	else:
 		return("You don't have permission to do that")
